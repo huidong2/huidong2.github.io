@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="https://huidong2.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -62,7 +62,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://huidong2.github.io"></form>
       </div>
     </div>
   </div>
@@ -73,7 +73,7 @@
   
     <article id="post-jenkins" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/06/10/jenkins/" class="article-date">
+    <a href="/2022/06/10/jenkins/index.html" class="article-date">
   <time class="dt-published" datetime="2022-06-10T05:46:18.000Z" itemprop="datePublished">2022-06-10</time>
 </a>
     
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/10/jenkins/">jenkins</a>
+      <a class="p-name article-title" href="/2022/06/10/jenkins/index.html">jenkins</a>
     </h1>
   
 
@@ -95,21 +95,21 @@
       
         <h1 id="jenkins安装"><a href="#jenkins安装" class="headerlink" title="jenkins安装"></a>jenkins安装</h1><blockquote>
 <h2 id="java-安装"><a href="#java-安装" class="headerlink" title="java 安装"></a>java 安装</h2><h2 id="tomcat-安装"><a href="#tomcat-安装" class="headerlink" title="tomcat 安装"></a>tomcat 安装</h2><h2 id="jenkins-安装"><a href="#jenkins-安装" class="headerlink" title="jenkins 安装"></a>jenkins 安装</h2><blockquote>
-<h3 id="jenkins下载"><a href="#jenkins下载" class="headerlink" title="jenkins下载"></a>jenkins下载</h3><p>war包地址:  <a target="_blank" rel="noopener" href="https://www.jenkins.io/download/">https://www.jenkins.io/download/</a><br>下载后放到tomcat webapps 目录下<br>修改tomcat:  vim bin&#x2F;catalina.sh<br>找到JAVA_OPTS后增加一行<br>JAVA_OPTS&#x3D;”$JAVA_OPTS -Dhudson.util.ProcessTree.disable&#x3D;true”<br>防止jenkins杀死脚本子进程<br>修改tomcat: vim conf&#x2F;context.xml<br><Resources cachingallowed="true" cachemaxsize="200000"><br>防止启动后提示告警信息<br>启动tomcat:bin&#x2F;startup.sh<br>查看jenkins启动日志：vim logs&#x2F;catalina.out<br>找到初始化密码复制下来<img src="/.com//image-20220527154922369.png" alt="image-20220527154922369"><br>打开访问页面<a target="_blank" rel="noopener" href="http://xxxx.8080/jenkins">http://xxxx.8080/jenkins</a><br>输入初始化密码后修改密码<br>安装jenkins基础插件<img src="/.com//image-20220602084220972.png" alt="image-20220602084220972"></Resources></p>
+<h3 id="jenkins下载"><a href="#jenkins下载" class="headerlink" title="jenkins下载"></a>jenkins下载</h3><p>war包地址:  <a target="_blank" rel="noopener" href="https://www.jenkins.io/download/">https://www.jenkins.io/download/</a><br>下载后放到tomcat webapps 目录下<br>修改tomcat:  vim bin&#x2F;catalina.sh<br>找到JAVA_OPTS后增加一行<br>JAVA_OPTS&#x3D;”$JAVA_OPTS -Dhudson.util.ProcessTree.disable&#x3D;true”<br>防止jenkins杀死脚本子进程<br>修改tomcat: vim conf&#x2F;context.xml<br><Resources cachingallowed="true" cachemaxsize="200000"><br>防止启动后提示告警信息<br>启动tomcat:bin&#x2F;startup.sh<br>查看jenkins启动日志：vim logs&#x2F;catalina.out<br>找到初始化密码复制下来<img src="/2022/06/10/jenkins/index/image-20220527154922369.png" alt="image-20220527154922369"><br>打开访问页面<a target="_blank" rel="noopener" href="http://xxxx.8080/jenkins">http://xxxx.8080/jenkins</a><br>输入初始化密码后修改密码<br>安装jenkins基础插件<img src="/2022/06/10/jenkins/index/image-20220602084220972.png" alt="image-20220602084220972"></Resources></p>
 </blockquote>
 <h2 id="创建项目，默认第一个就行"><a href="#创建项目，默认第一个就行" class="headerlink" title="创建项目，默认第一个就行"></a>创建项目，默认第一个就行</h2><blockquote>
-<p><img src="/.com//image-20220602084717624.png" alt="image-20220602084717624"></p>
-<h2 id="源码管理，我选择的是git"><a href="#源码管理，我选择的是git" class="headerlink" title="源码管理，我选择的是git"></a>源码管理，我选择的是git</h2><p><img src="/.com//image-20220606082600190.png" alt="image-20220606082600190"><br>这里的Credentials可以选择在全局凭据中配置，如果不选择的话默认使用的就是启动jenkins用户的默认环境<br><img src="/.com//image-20220606082820597.png" alt="image-20220606082820597"><br>git仓库可以使用用户名密码，或者sshkey，关于sshkey不同仓库的加密方式不同,请自行去仓库中查找</p>
-<h2 id="选择要构建的分支"><a href="#选择要构建的分支" class="headerlink" title="选择要构建的分支"></a>选择要构建的分支</h2><p><img src="/.com//image-20220606083139422.png" alt="image-20220606083139422"></p>
-<h2 id="构建，选择执行shell命令"><a href="#构建，选择执行shell命令" class="headerlink" title="构建，选择执行shell命令"></a>构建，选择执行shell命令</h2><p><img src="/.com//image-20220606083725878.png" alt="image-20220606083725878"><br>通常会需要更新测试环境，根据情况编写构建脚本<br><img src="/.com//image-20220608161143389.png" alt="image-20220608161143389"><br><img src="/.com//image-20220608162256990.png" alt="image-20220608162256990"></p>
-<h2 id="备份构建结果"><a href="#备份构建结果" class="headerlink" title="备份构建结果"></a>备份构建结果</h2><p><img src="/.com//image-20220608162419732.png" alt="image-20220608162419732"><br><img src="/.com//image-20220608162456442.png" alt="image-20220608162456442"></p>
+<p><img src="/2022/06/10/jenkins/index/image-20220602084717624.png" alt="image-20220602084717624"></p>
+<h2 id="源码管理，我选择的是git"><a href="#源码管理，我选择的是git" class="headerlink" title="源码管理，我选择的是git"></a>源码管理，我选择的是git</h2><p><img src="/2022/06/10/jenkins/index/image-20220606082600190.png" alt="image-20220606082600190"><br>这里的Credentials可以选择在全局凭据中配置，如果不选择的话默认使用的就是启动jenkins用户的默认环境<br><img src="/2022/06/10/jenkins/index/image-20220606082820597.png" alt="image-20220606082820597"><br>git仓库可以使用用户名密码，或者sshkey，关于sshkey不同仓库的加密方式不同,请自行去仓库中查找</p>
+<h2 id="选择要构建的分支"><a href="#选择要构建的分支" class="headerlink" title="选择要构建的分支"></a>选择要构建的分支</h2><p><img src="/2022/06/10/jenkins/index/image-20220606083139422.png" alt="image-20220606083139422"></p>
+<h2 id="构建，选择执行shell命令"><a href="#构建，选择执行shell命令" class="headerlink" title="构建，选择执行shell命令"></a>构建，选择执行shell命令</h2><p><img src="/2022/06/10/jenkins/index/image-20220606083725878.png" alt="image-20220606083725878"><br>通常会需要更新测试环境，根据情况编写构建脚本<br><img src="/2022/06/10/jenkins/index/image-20220608161143389.png" alt="image-20220608161143389"><br><img src="/2022/06/10/jenkins/index/image-20220608162256990.png" alt="image-20220608162256990"></p>
+<h2 id="备份构建结果"><a href="#备份构建结果" class="headerlink" title="备份构建结果"></a>备份构建结果</h2><p><img src="/2022/06/10/jenkins/index/image-20220608162419732.png" alt="image-20220608162419732"><br><img src="/2022/06/10/jenkins/index/image-20220608162456442.png" alt="image-20220608162456442"></p>
 </blockquote>
 </blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/10/jenkins/" data-id="cl481408l0000psqi8leoacxr" data-title="jenkins" class="article-share-link">Share</a>
+      <a data-url="https://huidong2.github.io/2022/06/10/jenkins/index.html" data-id="cl483cfey0000jwqih87u6y55" data-title="jenkins" class="article-share-link">Share</a>
       
       
       
@@ -152,7 +152,7 @@
       <ul>
         
           <li>
-            <a href="/2022/06/10/jenkins/">jenkins</a>
+            <a href="/2022/06/10/jenkins/index.html">jenkins</a>
           </li>
         
       </ul>
