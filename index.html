@@ -93,7 +93,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="记录一次kubeSphere部署seata遇到的问题"><a href="#记录一次kubeSphere部署seata遇到的问题" class="headerlink" title="记录一次kubeSphere部署seata遇到的问题"></a>记录一次kubeSphere部署seata遇到的问题</h1><p>测试环境使用的kubeSphere x86架构, 使用的镜像包是seata1.3版本的,使用的registry.conf的配置方式,<br>生产环境的kubeSphere是arm架构的, 由于1.3版本的镜像不支持arm架构,所以将镜像更换为seata1.6-arm,升级后无法读取到配置文件内容,<br>查询资料后得知seata1.5版本后配置文件修改变成了application.yml,<br>复制容器内&#x2F;seata-server&#x2F;resources&#x2F;application.yml文件内容进行修改,将docker映射目录要修改为&#x2F;seata-server&#x2F;resources,<br>修改后启动镜像出现问题 Logging system failed to initialize using configuration from ‘classpath:logback-spring.xml’</p>
+        <p>测试环境使用的kubeSphere x86架构, 使用的镜像包是seata1.3版本的,使用的registry.conf的配置方式,<br>生产环境的kubeSphere是arm架构的, 由于1.3版本的镜像不支持arm架构,所以将镜像更换为seata1.6-arm,升级后无法读取到配置文件内容,<br>查询资料后得知seata1.5版本后配置文件修改变成了application.yml,<br>复制容器内&#x2F;seata-server&#x2F;resources&#x2F;application.yml文件内容进行修改,将配置文件映射目录修改为&#x2F;seata-server&#x2F;resources,<br>修改后启动镜像出现问题 Logging system failed to initialize using configuration from ‘classpath:logback-spring.xml’</p>
 <blockquote>
 <blockquote>
 <p><img src="/2023/01/09/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1kubeSphere%E9%83%A8%E7%BD%B2seata%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/index/B70B29DA-405F-4fce-AC97-C7216C26137E.png" alt="B70B29DA-405F-4fce-AC97-C7216C26137E.png"></p>
